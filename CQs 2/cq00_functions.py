@@ -9,7 +9,7 @@ def mimic(message: str) -> str:
 
 
 def main() -> None:
-    """Function prints the result of calling the mimic function with the message"""
+    """This function prints the result of calling the mimic function with the message "Howdy!"."""
     print(mimic(message=input("What is your message?")))
 
 
