@@ -3,7 +3,7 @@
 __author__ = "730661650"
 
 
-def guess_a_number():
+def guess_a_number() -> None:
     secret = int(7)
     user_input = input("Guess a number: ")
     print(f"Your guess was {user_input}")
