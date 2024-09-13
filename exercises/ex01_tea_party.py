@@ -1,6 +1,6 @@
 """Exercise 1, planning a cozy tea party!"""
 
-___author___ = "730661650"
+__author__ = "730661650"
 
 
 def main_planner(guests: int) -> None:
@@ -8,34 +8,27 @@ def main_planner(guests: int) -> None:
     a "main" function, which will give outputs for all
     of the other defined functions within this script"""
     # must construct various print statements for each function below
-    # must first define the variables
     # we will define the number of tea bags by calling the tea_bags function
     # define the number of treats by calling the treats function
     # define the cost by calling the cost function
     # must print with the same string literals from the instructions in quotes, followed by the variables
-    number_of_teabags = tea_bags(guests)
-    number_of_treats = treats(guests)
-    total_cost = cost(number_of_teabags, number_of_treats)
-    print("Tea bags:", number_of_teabags)
-    print("Treats:", number_of_treats)
-    print("Cost:", total_cost)
+    print("A Cozy Tea Party for " + str(guests) + " People!")
+    print("Tea bags: " + str(tea_bags(guests)))
+    print("Treats: " + str(treats(guests)))
+    print("Cost: $" + str(int(cost(tea_bags(guests), treats(guests)) * 100) / 100.0))
 
 
 def tea_bags(people: int) -> int:
+    """function to give us total # of tea bags we need"""
     # slightly confused on what to write for the return function
     # realized it is just people * 2 following the return, no parentheses
     return people * 2
 
 
 def treats(people: int) -> int:
-    # do we do return 1.5 x tea_bags? I am confused on how to write this
-    # must add a variable to set equal to the result of the tea_bags function
-    number_of_teabags = tea_bags(people)
-    number_of_treats = number_of_teabags * 1.5
-    # how should i format return statement?
-    # must add int before the parentheses
-    # number_of_treats inside the parentheses
-    return int(number_of_treats)
+    """function to give us total # of treats we need"""
+    # Call tea_bags using a keyword argument
+    return int(tea_bags(people=people) * 1.5)
 
 
 def cost(tea_count: int, treat_count: int) -> float:
