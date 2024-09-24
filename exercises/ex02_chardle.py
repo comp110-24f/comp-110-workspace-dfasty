@@ -3,7 +3,7 @@
 __author__ = "730661650"
 
 
-def input_word():
+def input_word() -> str:
     user_input = input("Enter a 5-character word: ")
     if len(user_input) != 5:
         print("Error: Word must contain 5 characters.")
@@ -12,7 +12,7 @@ def input_word():
     return user_input
 
 
-def input_letter():
+def input_letter() -> str:
     user_input_1 = input("Enter a single character: ")
     # the length must only be one since it is a single character, does not equal is equal to !=
     if len(user_input_1) != 1:
@@ -44,8 +44,11 @@ def contains_char(word: str, letter: str) -> None:
         print(f"{count} instances of {letter} found in {word}")
 
 
-def main():
-    contains_char(word=input_word(), letter=input_letter())
+def main() -> None:
+    # need to define word and letter, both strings
+    word: str = input_word()
+    letter: str = input_letter()
+    contains_char(word, letter)
 
 
 # to call the aggregated function
